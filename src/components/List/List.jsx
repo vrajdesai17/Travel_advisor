@@ -10,7 +10,6 @@ import {
   Select,
 } from '@material-ui/core';
 import PlaceDetails from '../PlaceDetails/PlaceDetails';
-
 import useStyles from './styles';
 
 const List = ({
@@ -21,7 +20,10 @@ const List = ({
   setType,
   rating,
   setRating,
+  addBM,
+  deleteBookmark
 }) => {
+
   const classes = useStyles();
   const [elRefs, setElRefs] = useState([]);
 
@@ -32,7 +34,7 @@ const List = ({
 
     setElRefs(refs);
   }, [places]);
-
+    
   return (
     <div className={classes.container}>
       <Typography variant="h4">
@@ -65,9 +67,11 @@ const List = ({
             {places?.map((place, index) => (
               <Grid item key={index} xs={12}>
                 <PlaceDetails
+                  addBM={addBM}
                   place={place}
                   selected={Number(childClicked) === index}
                   refProp={elRefs[index]}
+                  deleteBookmark = {deleteBookmark}
                 />
               </Grid>
             ))}

@@ -9,6 +9,7 @@ import {
   Button,
 } from '@material-ui/core';
 import SearchIcon from '@material-ui/icons/Search';
+import {Link} from 'react-router-dom';
 
 
 import useStyles from './styles';
@@ -22,7 +23,7 @@ const Header = ({ setCoordinates }) => {
   const onPlaceChanged = () => {
     const lat = autocomplete.getPlace().geometry.location.lat();
     const lng = autocomplete.getPlace().geometry.location.lng();
-
+    console.log(lat,lng);
     setCoordinates({ lat, lng });
   };
 
@@ -30,7 +31,7 @@ const Header = ({ setCoordinates }) => {
     <AppBar position="static">
       <Toolbar className={classes.toolbar}>
         <Typography variant="h5" className={classes.title}>
-          Travel Advisor
+          Travel Buddy
         </Typography>
         <Box display="flex">
           <Typography variant="h6" className={classes.title}>
@@ -51,8 +52,7 @@ const Header = ({ setCoordinates }) => {
             variant="contained"
             color="primary"
             
-          >
-            BOOKMARKED
+          ><Link style={{'color':'white', 'textDecoration':'none'}} to='/bookmark'>BOOKMARKED</Link>            
           </Button>
         </Box>
       </Toolbar>

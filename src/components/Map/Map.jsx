@@ -56,7 +56,8 @@ const Map = ({
                 <img
                   className={classes.pointer}
                   src={
-                    'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'
+                    place.photo ? place.photo.images.large.url
+                    : 'https://www.foodserviceandhospitality.com/wp-content/uploads/2016/09/Restaurant-Placeholder-001.jpg'
                   }
                   alt={place.name}
                 />

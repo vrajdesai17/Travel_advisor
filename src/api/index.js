@@ -2,6 +2,7 @@ import axios from 'axios';
 
 export const getPlacesData = async (type, sw, ne) => {
   try {
+      console.log("placeData:",type,sw,ne)
     const {
       data: { data },
     } = await axios.get(
@@ -14,7 +15,7 @@ export const getPlacesData = async (type, sw, ne) => {
           tr_longitude: ne.lng,
         },
         headers: {
-          'x-rapidapi-key': '8e59401748mshf6028adabdd809dp1d1ce8jsnab01012bcb45',
+          'x-rapidapi-key': 'f68031ddc5msh14deeb1d22be315p1aa846jsna253077f19a4',
           'x-rapidapi-host': 'travel-advisor.p.rapidapi.com',
         },
       }
